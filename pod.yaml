@@ -6,7 +6,7 @@ metadata:
     cpu-load-balancing.crio.io: "true"
   labels:
     app.kubernetes.io/name: cyclictest
-    app.kubernetes.io/version: v1.0.0
+    app.kubernetes.io/version: v1.0.1
 spec:
   containers:
     - name: cyclictest
