@@ -1,0 +1,45 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cyclictest
+  annotations:
+    cpu-load-balancing.crio.io: "true"
+  labels:
+    app.kubernetes.io/name: cyclictest
+    app.kubernetes.io/version: v1.0.1
+spec:
+  template:
+    spec:
+      containers:
+        - name: cyclictest
+          namespace: openshift-monitoring
+          volumeMounts:
+            - mountPath: /dev/cpu_dma_latency
+              name: dev-cpu-dma-latency
+          image: quay.io/ayosef/cyclictest
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 1000m
+            limits:
+              cpu: 1000m
+          command: ["cyclictest"]
+          args:
+            - --smp
+            - --duration=1m
+            - --histofall=US
+          securityContext:
+            privileged: true
+            capabilities:
+              add:
+                - ipc_lock
+                - sys_nice
+                - sys_rawio
+      nodeSelector:
+        node-role.kubernetes.io/worker-cnf: ""
+      restartPolicy: Never
+      volumes:
+        - name: dev-cpu-dma-latency
+          hostPath:
+            path: /dev/cpu_dma_latency
+      runtimeClassName: performance-performance
