@@ -6,8 +6,9 @@ Cyclictest accurately and repeatedly measures the difference between a thread's 
 
 ## Deployment
 ```bash
-oc adm policy add-scc-to-user privileged -z default -n openshift-monitoring
-oc apply -f daemonset.yaml
+oc apply -f performanceprofile.yaml
+# ... Wait for mcp to complete updating the nodes ...
+oc apply -f pod.yaml
 ```
 
 ## Wiki
