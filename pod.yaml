@@ -16,6 +16,7 @@ spec:
           name: dev-cpu-dma-latency
       image: quay.io/ayosef/cyclictest
       imagePullPolicy: Always
+      restartPolicy: Never
       resources:
         requests:
           cpu: 1000m
