@@ -23,9 +23,10 @@ spec:
         limits:
           cpu: 1000m
       args:
+        - cyclictest
         - --smp
-        - -D1m
-        - -h
+        - --duration=1m
+        - --histofall=US
       securityContext:
         privileged: true
         capabilities:

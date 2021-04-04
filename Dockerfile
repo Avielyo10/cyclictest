@@ -7,4 +7,4 @@ WORKDIR rt-tests
 RUN git checkout stable/v1.0
 RUN make all install
 
-ENTRYPOINT cyclictest
+CMD ["cyclictest"]
