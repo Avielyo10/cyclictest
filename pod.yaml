@@ -23,7 +23,8 @@ spec:
           cpu: 1000m
       args:
         - --smp
-        - -p95
+        - -D1m
+        - -h
       securityContext:
         privileged: true
         capabilities:
