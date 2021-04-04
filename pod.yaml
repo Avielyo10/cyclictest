@@ -21,8 +21,8 @@ spec:
           cpu: 1000m
         limits:
           cpu: 1000m
+      command: ["cyclictest"]
       args:
-        - cyclictest
         - --smp
         - --duration=1m
         - --histofall=US
