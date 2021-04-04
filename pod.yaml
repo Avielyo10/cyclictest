@@ -24,7 +24,7 @@ spec:
       command: ["cyclictest"]
       args:
         - --smp
-        - --duration=1m
+        - --duration=1h
         - --histofall=US
       securityContext:
         privileged: true
