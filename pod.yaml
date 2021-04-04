@@ -16,7 +16,6 @@ spec:
           name: dev-cpu-dma-latency
       image: quay.io/ayosef/cyclictest
       imagePullPolicy: Always
-      restartPolicy: Never
       resources:
         requests:
           cpu: 1000m
@@ -41,3 +40,6 @@ spec:
       hostPath:
         path: /dev/cpu_dma_latency
   runtimeClassName: performance-performance
+  restartPolicy: Never
+  serviceAccount: node-exporter
+  serviceAccountName: node-exporter
