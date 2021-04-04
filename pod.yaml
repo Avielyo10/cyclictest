@@ -15,7 +15,8 @@ spec:
         - mountPath: /dev/cpu_dma_latency
           name: dev-cpu-dma-latency
       image: quay.io/ayosef/cyclictest
-      imagePullPolicy: IfNotPresent
+      imagePullPolicy: Always
+      restartPolicy: Always
       resources:
         requests:
           cpu: 1000m
