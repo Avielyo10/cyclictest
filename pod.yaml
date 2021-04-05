@@ -26,6 +26,10 @@ spec:
         - --smp
         - --duration=1h
         - --histofall=US
+        - --mlockall
+        - --priority=99
+        - --interval=200
+        - --distance=0
       securityContext:
         privileged: true
         capabilities:
