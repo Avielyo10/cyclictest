@@ -18,9 +18,9 @@ spec:
       imagePullPolicy: Always
       resources:
         requests:
-          cpu: 1000m
+          cpu: 16
         limits:
-          cpu: 1000m
+          cpu: 16
       command: ["cyclictest"]
       args:
         - --smp
