@@ -27,7 +27,7 @@ spec:
         - --duration=1h
         - --histofall=US
         - --mlockall
-        - --priority=99
+        - --priority=80
         - --interval=200
         - --distance=0
       securityContext:
