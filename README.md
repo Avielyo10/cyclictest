@@ -6,6 +6,8 @@ Cyclictest accurately and repeatedly measures the difference between a thread's 
 
 ## Deployment
 ```bash
+pip3 install jinja2-tools
+jinja render -e duration=1h -t ./pod.j2 -o pod.yaml
 oc apply -f performanceprofile.yaml
 # ... Wait for mcp to complete updating the nodes ...
 oc apply -f pod.yaml

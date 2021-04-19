@@ -24,7 +24,7 @@ spec:
       command: ["cyclictest"]
       args:
         - --smp
-        - --duration=1h
+        - --duration={{ duration }}
         - --histofall=US
         - --mlockall
         - --priority=80
