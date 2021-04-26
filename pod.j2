@@ -43,7 +43,7 @@ spec:
     - name: dev-cpu-dma-latency
       hostPath:
         path: /dev/cpu_dma_latency
-  runtimeClassName: performance-performance
+  runtimeClassName: performance-{{ profile_name }}
   restartPolicy: Never
   serviceAccount: node-exporter
   serviceAccountName: node-exporter
