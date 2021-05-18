@@ -38,7 +38,7 @@ spec:
             - sys_nice
             - sys_rawio
   nodeSelector:
-    node-role.kubernetes.io/worker-cnf: ""
+    node-role.kubernetes.io/{{ cnf_node_selector }}: ""
   volumes:
     - name: dev-cpu-dma-latency
       hostPath:
