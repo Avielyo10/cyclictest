@@ -6,7 +6,7 @@ metadata:
     cpu-load-balancing.crio.io: "true"
   labels:
     app.kubernetes.io/name: cyclictest
-    app.kubernetes.io/version: v1.0.2
+    app.kubernetes.io/version: latest
 spec:
   containers:
     - name: cyclictest
@@ -14,7 +14,7 @@ spec:
       volumeMounts:
         - mountPath: /dev/cpu_dma_latency
           name: dev-cpu-dma-latency
-      image: quay.io/ayosef/cyclictest:v1.0.2
+      image: quay.io/ayosef/cyclictest:latest
       imagePullPolicy: Always
       resources:
         requests:
