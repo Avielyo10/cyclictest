@@ -18,10 +18,10 @@ spec:
       imagePullPolicy: Always
       resources:
         requests:
-          cpu: 16
+          cpu: {{ cpu }}
           memory: 2G
         limits:
-          cpu: 16
+          cpu: {{ cpu }}
           memory: 2G
       command: ["cyclictest"]
       args:
@@ -33,7 +33,7 @@ spec:
         - --distance=0
         - --smi
         - -a
-        - -t 16
+        - -t {{ cpu }}
         - -n
         - --refresh_on_max
       securityContext:
