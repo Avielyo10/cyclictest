@@ -19,16 +19,18 @@ spec:
       resources:
         requests:
           cpu: 16
+          memory: 2G
         limits:
           cpu: 16
+          memory: 2G
       command: ["cyclictest"]
       args:
         - --smp
         - --duration={{ duration }}
         - --histofall=30
         - --mlockall
-        - --priority=80
-        - --interval=200
+        - --priority=95
+        - --interval=1000
         - --distance=0
       securityContext:
         privileged: true
