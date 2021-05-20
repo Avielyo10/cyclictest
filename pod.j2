@@ -8,6 +8,10 @@ metadata:
     app.kubernetes.io/name: cyclictest
     app.kubernetes.io/version: latest
 spec:
+  initContainers:
+  - name: init-cyclictest
+    image: quay.io/ayosef/cyclictest:latest
+    command: ['sleep', '60']
   containers:
     - name: cyclictest
       namespace: openshift-monitoring
